@@ -1,0 +1,28 @@
+{
+  "name": "verbal-morality",
+  "version": "0.1.0",
+  "description": "How immoral is your text?",
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tape test/verbal-morality.js"
+  },
+  "keywords": [
+    "profanity",
+    "demolitionman"
+  ],
+  "author": {
+      "name": "Joe Mahoney",
+      "email": "jmahoney@iterative.co.nz"
+  },
+  "license": "MIT",
+  "dependencies": {
+      "badwords-list": "latest"
+  },
+  "devDependencies": {
+    "tape": "latest"
+  }
+}
