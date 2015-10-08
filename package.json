@@ -1,6 +1,6 @@
 {
   "name": "verbal-morality",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "How immoral is your text?",
   "main": "index.js",
   "repository": "https://github.com/jmahoney/verbal-morality",
