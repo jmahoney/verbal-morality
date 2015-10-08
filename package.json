@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "How immoral is your text?",
   "main": "index.js",
+  "repository": "https://github.com/jmahoney/verbal-morality",
   "directories": {
     "example": "example",
     "test": "test"
