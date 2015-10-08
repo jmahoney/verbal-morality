@@ -1,5 +1,13 @@
 var list = require('badwords-list');
 
+function isBadWord(word, arr) {
+  return arr.indexOf(word.toLowerCase()) > -1;
+}
+
+function isBowlderised(word) {
+  return word.indexOf('**') > -1;
+}
+
 module.exports = function(str) {
   var level = 0;
 
@@ -10,11 +18,10 @@ module.exports = function(str) {
   var input = str.toString().split(" ");
 
   for (var w in input) {
-      var i = list.array.indexOf(input[w].toLowerCase());
-      if (i > -1) {
+      if (isBadWord(input[w], list.array) || isBowlderised(input[w])) {
         level = level + 1;
       }
   }
-  
+
   return level;
 }

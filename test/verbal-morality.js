@@ -8,35 +8,45 @@ test('null input', function (t) {
 
 test('empty string', function (t) {
     t.plan(1);
-    t.equal(0, vm(""));
+    t.equal(0, vm(''));
 });
 
 test('single good word', function(t) {
   t.plan(1);
-  t.equal(0, vm("foo"));
+  t.equal(vm('foo'), 0);
 });
 
 test('multiple good words', function(t) {
   t.plan(1);
-  t.equal(0, vm("foo bar hello goodbye"));
+  t.equal(vm('foo bar hello goodbye'), 0);
 });
 
 test('single bad word', function(t) {
   t.plan(1);
-  t.equal(1, vm("fuck"));
+  t.equal(vm('fuck'), 1);
 });
 
 test('multiple bad words', function(t) {
   t.plan(1);
-  t.equal(3, vm("fuck shit fuck"));
+  t.equal(vm('fuck shit fuck'), 3);
 });
 
 test('word that looks bad but is actually good', function(t) {
   t.plan(1);
-  t.equal(0, vm('scunthorpe'));
+  t.equal(vm('scunthorpe'), 0);
 });
 
 test('capitalization', function(t) {
   t.plan(1);
-  t.equal(4, vm("FUCK Shit CuNt MotherFucker"));
+  t.equal( vm('FUCK Shit CuNt MotherFucker'), 4);
+});
+
+test('bowderised words', function(t) {
+  t.plan(1);
+  t.equal(1, vm('s**t'));
+});
+
+test('bowlderised and legit bad words', function(t) {
+  t.plan(1);
+  t.equal(vm('f*****g shitting c**t'), 3);
 });
